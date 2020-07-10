@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:orderInCategory="100"
+        android:title="@string/menu_home" />
+
+    <item
+        android:id="@+id/ridesFragment"
+        android:icon="@drawable/ic_directions_car"
+        android:orderInCategory="101"
+        android:title="@string/rides_text" />
+
+    <item
+        android:id="@+id/notificationFragment"
+        android:icon="@drawable/ic_notifications"
+        android:orderInCategory="102"
+        android:title="@string/notifications_text" />
+
+    <item
+        android:id="@+id/reviewFragment"
+        android:icon="@drawable/ic_rate_review"
+        android:orderInCategory="103"
+        android:title="@string/reviews_text" />
+
+    <item
+        android:id="@+id/historyFragment"
+        android:icon="@drawable/ic_history"
+        android:orderInCategory="104"
+        android:title="@string/travel_history_text" />
+
+    <group
+        android:checkableBehavior="single"
+        android:orderInCategory="105">
+
+        <item
+            android:id="@+id/userProfileFragment"
+            android:icon="@drawable/ic_account_circle"
+            android:title="@string/my_profile_text" />
+
+        <item
+            android:id="@+id/carProfileFragment"
+            android:icon="@drawable/ic_directions_car"
+            android:title="@string/car_profile_text" />
+
+    </group>
+</menu>

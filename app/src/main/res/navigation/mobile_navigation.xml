@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mysasse.wheretonext.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_findRideFragment"
+            app:destination="@id/findRideFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pickupLocationFragment"
+            app:destination="@id/pickupLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ridesFragment"
+        android:name="com.mysasse.wheretonext.ui.rides.RidesFragment"
+        android:label="@string/rides_text"
+        tools:layout="@layout/rides_fragment">
+        <action
+            android:id="@+id/action_ridesFragment_to_findRideFragment"
+            app:destination="@id/findRideFragment" />
+        <action
+            android:id="@+id/action_ridesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_ridesFragment_to_pickupLocationFragment"
+            app:destination="@id/pickupLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.mysasse.wheretonext.ui.notifications.NotificationFragment"
+        android:label="@string/notifications_text"
+        tools:layout="@layout/notification_fragment" />
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.mysasse.wheretonext.ui.reviews.ReviewFragment"
+        android:label="@string/reviews_text"
+        tools:layout="@layout/review_fragment" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.mysasse.wheretonext.ui.history.HistoryFragment"
+        android:label="@string/travel_history_text"
+        tools:layout="@layout/history_fragment" />
+    <fragment
+        android:id="@+id/carProfileFragment"
+        android:name="com.mysasse.wheretonext.ui.profile.CarProfileFragment"
+        android:label="@string/car_profile_text"
+        tools:layout="@layout/car_profile_fragment">
+        <action
+            android:id="@+id/action_carProfileFragment_to_updateCarProfileFragment"
+            app:destination="@id/updateCarProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.mysasse.wheretonext.ui.profile.UserProfileFragment"
+        android:label="@string/my_profile_text"
+        tools:layout="@layout/user_profile_fragment">
+        <action
+            android:id="@+id/action_userProfileFragment_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.mysasse.wheretonext.ui.profile.UpdateProfileFragment"
+        android:label="@string/update_profile_btn_text"
+        tools:layout="@layout/update_profile_fragment">
+        <argument
+            android:name="profile"
+            app:argType="com.mysasse.wheretonext.data.models.Profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/findRideFragment"
+        android:name="com.mysasse.wheretonext.ui.rides.FindRideFragment"
+        android:label="@string/find_ride_text"
+        tools:layout="@layout/find_ride_fragment" />
+    <fragment
+        android:id="@+id/offerDateFragment"
+        android:name="com.mysasse.wheretonext.ui.rides.OfferDateFragment"
+        android:label="@string/ride_date_text"
+        tools:layout="@layout/fragment_offer_date">
+        <action
+            android:id="@+id/action_offerDateFragment_to_ridePassengersFragment"
+            app:destination="@id/passengersFragment"
+            app:popUpTo="@id/ridesFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="ride"
+            app:argType="com.mysasse.wheretonext.data.models.Ride"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/passengersFragment"
+        android:name="com.mysasse.wheretonext.ui.rides.PassengersFragment"
+        android:label="@string/ride_passengers_text"
+        tools:layout="@layout/fragment_ride_passengers">
+        <argument
+            android:name="ride"
+            app:argType="com.mysasse.wheretonext.data.models.Ride"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_ridePassengersFragment_to_costFragment"
+            app:destination="@id/costFragment"
+            app:popUpTo="@id/ridesFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/publishRideFragment"
+        android:name="com.mysasse.wheretonext.ui.rides.PublishRideFragment"
+        android:label="@string/public_ride_text"
+        tools:layout="@layout/publish_ride_fragment">
+        <argument
+            android:name="ride"
+            app:argType="com.mysasse.wheretonext.data.models.Ride"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateCarProfileFragment"
+        android:name="com.mysasse.wheretonext.ui.profile.UpdateCarProfileFragment"
+        android:label="@string/update_car_profile_text"
+        tools:layout="@layout/update_car_profile_fragment">
+        <argument
+            android:name="car"
+            app:argType="com.mysasse.wheretonext.data.models.Car"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.mysasse.wheretonext.ui.rides.DetailsFragment"
+        android:label="@string/ride_details_text"
+        tools:layout="@layout/ride_details_fragment">
+        <argument
+            android:name="ride"
+            app:argType="com.mysasse.wheretonext.data.models.Ride" />
+        <action
+            android:id="@+id/action_detailsFragment_to_bookingDetailsFragment"
+            app:destination="@id/bookingDetailsFragment" />
+        <action
+            android:id="@+id/action_detailsFragment_to_bookingsFragment"
+            app:destination="@id/bookingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.mysasse.wheretonext.ui.rides.TransactionFragment"
+        android:label="@string/transact_text"
+        tools:layout="@layout/fragment_transaction" >
+        <argument
+            android:name="booking"
+            app:argType="com.mysasse.wheretonext.data.models.Booking" />
+    </fragment>
+    <fragment
+        android:id="@+id/writeReviewFragment"
+        android:name="com.mysasse.wheretonext.ui.reviews.WriteReviewFragment"
+        android:label="@string/write_review_text"
+        tools:layout="@layout/write_review_fragment" />
+    <fragment
+        android:id="@+id/pickupLocationFragment"
+        android:name="com.mysasse.wheretonext.ui.rides.PickupLocationFragment"
+        android:label="@string/pickup_location_text"
+        tools:layout="@layout/fragment_pickup_location">
+        <action
+            android:id="@+id/action_pickupLocationFragment_to_dropOffLocationFragment"
+            app:destination="@id/dropOffLocationFragment"
+            app:popUpTo="@id/ridesFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/dropOffLocationFragment"
+        android:name="com.mysasse.wheretonext.ui.rides.DropOffLocationFragment"
+        android:label="@string/drop_off_location_text"
+        tools:layout="@layout/fragment_drop_off_location">
+        <action
+            android:id="@+id/action_dropOffLocationFragment_to_offerDateFragment"
+            app:destination="@id/offerDateFragment"
+            app:popUpTo="@id/ridesFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="ride"
+            app:argType="com.mysasse.wheretonext.data.models.Ride"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/costFragment"
+        android:name="com.mysasse.wheretonext.ui.rides.CostFragment"
+        android:label="@string/ride_cost_text"
+        tools:layout="@layout/fragment_cost">
+        <action
+            android:id="@+id/action_costFragment_to_publishRideFragment"
+            app:destination="@id/publishRideFragment"
+            app:popUpTo="@id/ridesFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="ride"
+            app:argType="com.mysasse.wheretonext.data.models.Ride"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingDetailsFragment"
+        android:name="com.mysasse.wheretonext.ui.bookings.BookingDetailsFragment"
+        android:label="booking_details_fragment"
+        tools:layout="@layout/booking_details_fragment" >
+        <action
+            android:id="@+id/action_bookingDetailsFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+        <argument
+            android:name="rideId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingsFragment"
+        android:name="com.mysasse.wheretonext.ui.bookings.BookingsFragment"
+        android:label="bookings_fragment"
+        tools:layout="@layout/bookings_fragment" >
+        <argument
+            android:name="rideId"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

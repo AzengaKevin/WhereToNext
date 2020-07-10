@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "933061637215",
+    "firebase_url": "https://wheretonext-63cfe.firebaseio.com",
+    "project_id": "wheretonext-63cfe",
+    "storage_bucket": "wheretonext-63cfe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933061637215:android:107fc3a7ef020410be57ea",
+        "android_client_info": {
+          "package_name": "com.mysasse.wheretonext"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933061637215-77p5d7cqnh1f2lno006calcvgahqlqro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1oQAbv7WIE79AoEun70CEV3GO3Au1sAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933061637215-77p5d7cqnh1f2lno006calcvgahqlqro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
